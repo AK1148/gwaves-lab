@@ -1,8 +1,9 @@
 # this doesn't use odeint. this uses "adaptive stepping" 
 # same idea as before, just making results more precise (still not ligo/virgo level)
+# more accurate when merger is getting closer
 # uses adaptive Runge-Kutta method by Dormand and Prince (check readme)
 # uses scipy’s integrate.ode module (method = “dopri5”)
-#this is unfamiliar territory, so might contain significant errors
+# this is unfamiliar territory, so might contain significant errors
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -13,7 +14,7 @@ m1 = m2 = 5
 m = m1 + m2
 mu = m1 * m2 / m
 
-# System of ODEs
+# system of ODEs
 def F(v):
     return (32 / 5) * (mu / m)**2 * v**10
 
@@ -26,7 +27,7 @@ def system(t, y):
     dphidt = v**3 / m
     return [dvdt, dphidt]
 
-# Initial conditions
+# initial conditions
 v0 = 0.3
 phi0 = 0.0
 y0 = [v0, phi0]
@@ -34,7 +35,7 @@ t0 = 0
 t_max = 100
 dt = 0.1
 
-# Set up solver
+# set up solver
 solver = ode(system)
 solver.set_integrator('dopri5')
 solver.set_initial_value(y0, t0)
@@ -68,3 +69,5 @@ plt.ylabel("Strain")
 plt.legend()
 plt.grid()
 plt.show()
+
+#check plot (figure3) - fig2 but better

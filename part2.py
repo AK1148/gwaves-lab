@@ -12,7 +12,7 @@ m1 = m2 = 5
 m = m1 + m2
 mu = m1 * m2 / m
 
-# Functions
+# functions
 def F(v):
     return (32 / 5) * (mu / m)**2 * v**10
 
