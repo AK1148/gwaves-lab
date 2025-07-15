@@ -1,11 +1,13 @@
-\documentclass {article}
-\usepackage {amsmath}
-\usepackage {geometry}
-\geometry {margin=2in}
+#done in overleaf
 
-\title {Gravitational Waves from Inspiralling Compact Binaries: Equation Summary}
-\author {AK}
-\date {15 july}
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Gravitational Waves from Inspiralling Compact Binaries: Equation Summary}
+\author{AK}
+\date{15 july}
 
 \begin{document}
 
@@ -17,46 +19,46 @@ Modelled inspiral of two compact objects (black holes) using mathematical equati
 
 \subsection*{Velocity}
 
-\begin {equation}
-\frac {dv}{dt} = -\frac {F(v)}{dE/dv}
-\end {equation}
+\begin{equation}
+\frac{dv}{dt} = -\frac{F(v)}{dE/dv}
+\end{equation}
 
-\begin {itemize}
+\begin{itemize}
   \item \( v(t) \): Orbital velocity parameter (related to orbital frequency)
   \item \( F(v) \): Gravitational-wave energy flux (power radiated)
   \item \( E(v) \): Orbital's binding energy
-\end {itemize}
+\end{itemize}
 
 \subsection*{Orbital Phase}
 
-\begin {equation}
-\frac {d\phi}{dt} = \frac {v^3}{m}
-\end {equation}
+\begin{equation}
+\frac{d\phi}{dt} = \frac{v^3}{m}
+\end{equation}
 
-\begin {itemize}
+\begin{itemize}
   \item \( \phi(t) \): Orbital phase (radians)
   \item \( m = m_1 + m_2 \): Total mass of the binary system
 \end{itemize}
 
 \subsection*{Gravitational-Wave Polarizations}
 
-\begin {align}
+\begin{align}
 h_+(t) &= 4 \cdot \frac{\mu}{m} \cdot v^2(t) \cdot \cos(\phi(t)) \\
 h_{\times}(t) &= 4 \cdot \frac{\mu}{m} \cdot v^2(t) \cdot \sin(\phi(t))
 \end{align}
 
-\begin {itemize}
+\begin{itemize}
   \item \( h_+(t), h_{\times}(t) \): Plus and cross polarizations of the gravitational wave
   \item \( \mu = \frac{m_1 m_2}{m} \): Reduced mass
 \end{itemize}
 
 \subsection*{Other}
 
-\begin {equation}
+\begin{equation}
 E(v) = -\frac{1}{2} \mu v^2 \quad \Rightarrow \quad \frac{dE}{dv} = -\mu v
 \end {equation}
 
-\begin {equation}
+\begin{equation}
 F(v) = \frac{32}{5} \left( \frac{\mu}{m} \right)^2 v^{10}
 \end {equation}
 
