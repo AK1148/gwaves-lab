@@ -43,8 +43,8 @@ h_plus = 4 * (mu / m) * v**2 * np.cos(phi)
 h_cross = 4 * (mu / m) * v**2 * np.sin(phi)
 
 # plot h+ and h×
-plt.plot(t, h_plus, label='h+')
-plt.plot(t, h_cross, label='h×')
+plt.plot(t, h_plus, label='h+', color='green')
+plt.plot(t, h_cross, label='h×', color='red')
 plt.title("Part 2: Gravitational Wave Polarizations")
 plt.xlabel("Time")
 plt.ylabel("Strain")
