@@ -13,3 +13,5 @@ figures created with matplotlib: test graph, velocity, plus/cross polarization, 
 important note: I started by setting up a virtual environment (venv) in VS Code, then did pip install for numpy, scipy, matplotlib for THAt specific environment. it was a headache (also I'm an amateur) so should use anaconda. still, it's a short project and the latex file probably took longer to make
 
 I referred to https://arxiv.org/abs/0712.0343
+
+for you bro :D
