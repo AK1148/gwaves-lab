@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
+from scipy import constants 
 #repeat from part 1 but now also with orbit phase. this is what ligo (etc interferometers) needs
 #GW depends on two things. v(t) so speed already calculated and where the objects are so phi(t)
 #so this gives the full orbital picture. it needs to be solved as a coupled ode
@@ -8,9 +9,11 @@ from scipy.integrate import odeint
 #cross polarization: gw's diagonal stretching
 
 # define constants 
-MSUN_SI = 3e30
-G_SI = 6.67e-11
-C_SI = 3e8 
+
+MSUN_SI = 2e30     #scipy doesnt have 
+G_SI = constants.gravitational_constant
+C_SI = constants.speed_of_light
+#scipy inbuilt: https://docs.scipy.org/doc/scipy/reference/constants.html
 
 # input masses
 m1 = m2 = 5*MSUN_SI*G_SI/C_SI**3
@@ -37,10 +40,10 @@ def system(y, t):
     return [dvdt, dphidt]
 
 # initial conditions
-v0 = 0.3
+v0 = 0.2
 phi0 = 0.0
 y0 = [v0, phi0]
-t = np.linspace(0,5, 1000)
+t = np.linspace(0,3, 1000)
 
 # solve
 sol = odeint(system, y0, t)
