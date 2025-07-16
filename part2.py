@@ -7,8 +7,13 @@ from scipy.integrate import odeint
 #plus polarization: gw's vertical/horizontal stretching
 #cross polarization: gw's diagonal stretching
 
-# constants
-m1 = m2 = 5
+# define constants 
+MSUN_SI = 3e30
+G_SI = 6.67e-11
+C_SI = 3e8 
+
+# input masses
+m1 = m2 = 5*MSUN_SI*G_SI/C_SI**3
 m = m1 + m2
 mu = m1 * m2 / m
 
@@ -22,15 +27,20 @@ def E_prime(v):
 # Coupled system: y = [v, phi]
 def system(y, t):
     v, phi = y
-    dvdt = -F(v) / E_prime(v)
-    dphidt = v**3 / m
+
+    if v <= 0.5: 
+        dvdt = -F(v) / E_prime(v)
+        dphidt = v**3 / m
+    else: 
+        dvdt = 0.
+        dphidt =0.
     return [dvdt, dphidt]
 
 # initial conditions
 v0 = 0.3
 phi0 = 0.0
 y0 = [v0, phi0]
-t = np.linspace(0, 100, 1000)
+t = np.linspace(0,5, 1000)
 
 # solve
 sol = odeint(system, y0, t)
@@ -43,13 +53,20 @@ h_plus = 4 * (mu / m) * v**2 * np.cos(phi)
 h_cross = 4 * (mu / m) * v**2 * np.sin(phi)
 
 # plot h+ and h×
+plt.figure()
+plt.subplot(211) 
+plt.plot(t, v)
+plt.ylabel('v')
+plt.grid()
+plt.subplot(212)
 plt.plot(t, h_plus, label='h+', color='green')
 plt.plot(t, h_cross, label='h×', color='red')
 plt.title("Part 2: Gravitational Wave Polarizations")
-plt.xlabel("Time")
-plt.ylabel("Strain")
+plt.xlabel("Time (s)")
+plt.ylabel("Strain")   #no unit here, strain
 plt.legend()
 plt.grid()
+plt.tight_layout()
 plt.show()
 
 #check plot (figure2)
