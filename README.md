@@ -16,6 +16,8 @@ important note: I started by setting up a virtual environment (venv) in VS Code,
 
 important note 2: the GW polarization plot initially had some arbitrary dimensionless values for time that weren't really relevant (so G=1, c=1, which is naturally not true). After consulting some sources, realized this was due to a "hidden factor" in mass. This hidden factor,found to be GM/c^3 with some algebra + dimensional analysis, is of course the gravitational time unit. After accounting for this, I ended up with tangible physical time (used range 3s)
 
+THIS IS WHY FIG1, FIG2, FIG3 aren't useful. they only range minutely from 0-100 of some dimensionless time. this issue was fixed in FIG4
+
 important note 3: if running the code results in two weird-looking lines or empty space, make sure to increase the range. if you don't convert time, this will be 1e6 or 5e5 (otherwise 3-5s). Once you do this, you should see something like fig4). 
 
 Playing around with the parameters (e.g. 10 solar mass, initial speed etc) can be really informative
