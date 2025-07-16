@@ -8,9 +8,17 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import ode
+from scipy import constants
 
-# constants
-m1 = m2 = 5
+# define constants 
+
+MSUN_SI = 2e30     #scipy doesnt have 
+G_SI = constants.gravitational_constant
+C_SI = constants.speed_of_light
+#scipy inbuilt: https://docs.scipy.org/doc/scipy/reference/constants.html
+
+# input masses
+m1 = m2 = 5*MSUN_SI*G_SI/C_SI**3
 m = m1 + m2
 mu = m1 * m2 / m
 
@@ -28,19 +36,19 @@ def system(t, y):
     return [dvdt, dphidt]
 
 # initial conditions
-v0 = 0.3
+v0 = 0.2
 phi0 = 0.0
 y0 = [v0, phi0]
 t0 = 0
-t_max = 100
-dt = 0.1
+t_max = 10
+dt = 10
 
 # set up solver
 solver = ode(system)
 solver.set_integrator('dopri5')
 solver.set_initial_value(y0, t0)
 
-# Storage
+# storage
 t_vals = []
 v_vals = []
 phi_vals = []
@@ -51,23 +59,22 @@ while solver.successful() and solver.t < t_max:
     v_vals.append(solver.y[0])
     phi_vals.append(solver.y[1])
 
-# Convert to arrays
+# convert to arrays
 t_vals = np.array(t_vals)
 v_vals = np.array(v_vals)
 phi_vals = np.array(phi_vals)
 
-# Gravitational waves
+# gravitational waves
 h_plus = 4 * (mu / m) * v_vals**2 * np.cos(phi_vals)
 h_cross = 4 * (mu / m) * v_vals**2 * np.sin(phi_vals)
 
-# Plot
+# plot
 plt.plot(t_vals, h_plus, label="h+ (adaptive)", color='green')
 plt.plot(t_vals, h_cross, label="h× (adaptive)", color='red')
-plt.title("Part 3: GW Polarizations (Dormand-Prince RK45)")
+plt.title("Part 3: GW Polarizations (DOPRI5)")
 plt.xlabel("Time")
 plt.ylabel("Strain")
 plt.legend()
 plt.grid()
 plt.show()
 
-#check plot (figure3) - fig2 but better
