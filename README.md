@@ -20,7 +20,7 @@ THIS IS WHY FIG1, FIG2, FIG3 aren't useful. they only range minutely from 0-100 
 
 important note 3: if running the code results in two weird-looking lines or empty space, make sure to increase the range. if you don't convert time, this will be 1e6 or 5e5 (otherwise 3-5s). Once you do this, you should see something like fig4). 
 
-Playing around with the parameters (e.g. 10 solar mass, initial speed etc) can be really informative
+Playing around with the parameters (e.g. 10 solar mass, initial speed etc) can be really informative. *part2 is the main file*
 
 I referred to https://arxiv.org/abs/0712.0343 and scipy lib
 
