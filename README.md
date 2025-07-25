@@ -1,7 +1,7 @@
 # Gravitational waveforms numerical simulation using post-Newtonian approximation equations, scipy odeint for binary black hole system (AK B'lore July 2025)
 
 ## A simple exercise in modelling the inspiral of two compact objects i.e. black holes as they approach each other. 
-It's a scientific programming demonstration of essentially what interferometers like LIGO and VIRGO do when the detect gravitational waves (ripples in spacetime). Each black hole has original masses m1= m2 of 5 solar masses, initial velocity 0.2c (v; changed from initial 0.3c because it was too quick), initial orbital phase (phi) 0. Then used equations to compute:
+It's a scientific programming demonstration of essentially what interferometers like LIGO and VIRGO do when the detect gravitational waves (ripples in spacetime). Each black hole has original masses m1= m2 of 5 solar masses, initial velocity 0.2c (v; changed from initial 0.3c because it was too slow), initial orbital phase (phi) 0. Then used equations to compute:
 
 1. velocity evolution due to loss in gravitational wave energy
 2. orbital phase evolution
