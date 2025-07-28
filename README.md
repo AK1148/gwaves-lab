@@ -14,7 +14,7 @@ figures created with matplotlib: test graph, velocity, plus/cross polarization, 
 
 <ins>important note:</ins> I started by setting up a virtual environment (venv) in VS Code, then did a pip install for numpy, scipy, matplotlib for THAt specific environment
 
-<ins>important note 2:</ins> the GW polarization plot initially had some arbitrary dimensionless values for time that weren't really relevant (so assumed G=1, c=1, which is of course not true). After consulting some sources, realized this was due to a "hidden factor" in mass. This hidden factor, found to be GM/c^3 with some algebra + dimensional analysis, is known as the gravitational time unit. After accounting for this, I ended up with tangible physical time (with range 3s)
+<ins>important note 2:</ins> the GW polarization plot initially had some arbitrary dimensionless values for time that weren't really relevant (so assumed G=1, c=1, which is of course not true). After consulting sources, realized this was due to a "hidden factor" in mass. This hidden factor, found to be GM/c^3 with some algebra + dimensional analysis, is known as the gravitational time unit. After accounting for this, I ended up with tangible physical time (with range 3s)
 
 This is why FIG1, FIG2, FIG3 aren't great. They show only the process. they only range minutely from 0-100 of some dimensionless time. this issue was fixed in FIG4
 
